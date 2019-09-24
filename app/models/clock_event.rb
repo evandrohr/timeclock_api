@@ -3,9 +3,8 @@
 # Table name: clock_events
 #
 #  id         :uuid             not null, primary key
-#  event_date :date
-#  event_time :time
-#  type       :integer
+#  event_time :datetime
+#  type_evt   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :uuid             not null
@@ -21,5 +20,6 @@
 
 class ClockEvent < ApplicationRecord
   belongs_to :user
-  enum type: [:clock_in, :clock_out]
+  enum type_evt: [:clock_in, :clock_out]
+  validates_presence_of :event_time, :type_evt, :user_id
 end

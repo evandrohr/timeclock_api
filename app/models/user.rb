@@ -12,7 +12,7 @@
 
 class User < ApplicationRecord
   has_secure_password
-  has_many :clockevents
+  has_many :clock_events
   validates_presence_of :email, :password_digest
 
   
