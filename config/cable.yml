@@ -7,4 +7,4 @@ test:
 production:
   adapter: redis
   url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-  channel_prefix: baseauth_api_jwt_production
+  channel_prefix: timeclock_api_jwt_production

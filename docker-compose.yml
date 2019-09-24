@@ -9,9 +9,9 @@ services:
     volumes:
       - '.:/usr/src/app'
     environment:
-      DATABASE_URL: postgres://postgres:postgres@db/api
-      DATABASE_URL_DEV: postgres://postgres:postgres@db/api_dev
-      DATABASE_URL_TEST: postgres://postgres:postgres@db/api_test
+      DATABASE_URL: postgres://postgres:h1mamapa55db@db/timeclock_production
+      DATABASE_URL_DEV: postgres://postgres:h1mamapa55db@db/timeclock_development
+      DATABASE_URL_TEST: postgres://postgres:h1mamapa55db@db/timeclock_test
       DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL: 'true'
     depends_on: 
       - db
@@ -23,10 +23,10 @@ services:
     volumes:
       - ./tmp/db:/var/lib/postgres/data
     environment:
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: h1mamapa55db
   
-  adminer:
-    image: adminer
-    ports:
-      - 8080:8080
+  # adminer:
+  #   image: adminer
+  #   ports:
+  #     - 8080:8080
 

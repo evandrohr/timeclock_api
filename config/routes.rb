@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   namespace 'api' do
     namespace 'v1' do
       post 'authenticate', to: 'authentication#authenticate'
-      resources :users
+      resources :users do
+        resources :clockevents
+      end
     end
   end
 
