@@ -6,7 +6,7 @@ class Api::V1::ClockEventsController < ApplicationController
   # GET /clock_events
   # GET /clock_events.json
   def index
-    if params[:used_id]
+    if params[:user_id]
       @clock_events = ClockEvent.where(user_id: params[:user_id])
     end
     render json: @clock_events
