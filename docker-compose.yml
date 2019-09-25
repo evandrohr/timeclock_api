@@ -2,9 +2,8 @@ version: '3'
 services:
   api:
     build: .
-    command: rspec
+    restart: always
     ports:
-      - 3000:3000
       - 80:80
     command: bash -c "rails s --binding 0.0.0.0 --port 80"
     volumes:
@@ -19,6 +18,7 @@ services:
   
   db:
     image: postgres:12
+    restart: always
     ports:
         - 5432:5432
     volumes:
