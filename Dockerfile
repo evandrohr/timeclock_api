@@ -17,4 +17,4 @@ RUN bundle install
 
 COPY . .
 
-CMD ["rspec"]
+CMD ["bash -c", "rails s", "--binding 0.0.0.0",  "--port 3000"]
